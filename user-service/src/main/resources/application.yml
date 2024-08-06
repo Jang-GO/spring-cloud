@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: user-service
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -27,3 +32,13 @@ eureka:
 
 greeting:
   message: Welcome Hello
+
+#token:
+#  expiration_time:  86400000
+#  secret: wJ8XzJv4vv1Z0LQ3Rq1Gp0Q8Y6S5GzZ8S5T3Gp6P5I3+5j8Dfz1pT8Q+X4T2QWQZ5Q6J4P4M8T2L6T5R2Q3==
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh, health, beans, busrefresh
